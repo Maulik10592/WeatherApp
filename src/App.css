@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.App{
+  background-color: #00DBDE;
+  background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);  
+  position: relative;
+  margin: 0 auto;
+  height: auto;
+  min-height: 150px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 10px 20px 30px 20px;
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 5px #7c6fee;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.WeatherInputBox{
+  position: relative;
 }
+h1,h2{    
+  margin: 0;
+  color: #ffffff;
+  padding: 10px 0;
+  text-shadow: 2px 2px black;
+}
+p{
+  padding: 0;
+  font-size: 16px;
+  color: #ffffff;
+  margin: 0;
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+.WeatherInputBox button{
+  background: #FDC830;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #ffffff;
+  border: 0;
+  padding: 10px 30px;
+  border-radius: 5px;
+  line-height: 16px;
+  position: relative;
+  display: block;
+  margin: 20px auto 0;
+  cursor: pointer;
+  text-shadow: 1px 1px black;
+  box-shadow: 0 2px 5px #FDC830;
+  letter-spacing: 2px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-transform: capitalize;
+}
+.WeatherInputBox button:hover{
+  box-shadow: 0 2px 5px #ED213A;
+  background: #ED213A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.WeatherInputBox input{
+  position: relative;
+  border: 1px solid #dedede;
+  padding: 10px;
+  transition: 0.4s;
+  background: transparent;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  text-shadow: 1px 1px black;
+  display: block;
+  margin: 10px auto;
+  outline: none;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  line-height: 20px;
+}
+.input-effect{position: relative;outline: none;max-width: 250px;margin: auto;}
+::placeholder{color: #fff;}
+:focus{outline: none;}
+.effect ~ .focus-border:before,
+.effect ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 0; width: 0; height: 2px; background-color: #ffffff;transition: 0.3s;}
+.effect ~ .focus-border:after{top: auto; bottom: 0; left: auto; right: 0;}
+.effect ~ .focus-border i:before,
+.effect ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #ffffff;transition: 0.4s;}
+.effect ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0;}
+.effect:focus ~ .focus-border:before,
+.effect:focus ~ .focus-border:after,
+.has-content.effect ~ .focus-border:before,
+.has-content.effect ~ .focus-border:after{width: 100%; transition: 0.3s;}
+.effect:focus ~ .focus-border i:before,
+.effect:focus ~ .focus-border i:after,
+.has-content.effect ~ .focus-border i:before,
+.has-content.effect ~ .focus-border i:after{height: 100%; transition: 0.4s;}
