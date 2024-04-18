@@ -9,6 +9,8 @@ const Weather = () => {
   const API_KEY = '8c6e30592e00f77e6d53d6b0a92ef4e6'; // Replace with your actual API key
   const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
+  const mainBg = document.getElementById('root');
+
   const fetchWeatherData = async () => {
     try {
       const response = await axios.get(API_URL, {
@@ -20,6 +22,8 @@ const Weather = () => {
       });
 
       setWeatherData(response.data);
+      mainBg.classList.add("darkBg");
+
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
@@ -36,7 +40,7 @@ const Weather = () => {
 
   return (
     <div className='WeatherInputBox'>
-        <h1>Today's Weather</h1>
+      <h1>Today's Weather</h1>
       <form onSubmit={handleSubmit}>
         <div className="input-effect">
           <input className="effect"
